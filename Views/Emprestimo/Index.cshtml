@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EmprestimosModel>
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h1>Empréstimos de Equipamentos Multimídia</h1>
+            <a class="btn btn-success mx-2" asp-controller="Emprestimo" asp-action="Cadastrar">Cadastrar novo empréstimo</a>
+
+        </div>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Sala</th>
+            <th scope="col">Equipamentos Multimídis</th>
+            <th scope="col">Data de Reserva</th>
+            <th scope="col">Data Devolução</th>
+        </tr>
+    </thead>
+    <tbody>
+       @if(Model != null){
+            @foreach(var emprestimo in Model)
+            {
+                <tr>
+                    <th scope="row">@emprestimo.Name</th>
+                    <td>@emprestimo.Sala</td>
+                    <td>@emprestimo.EquipamentoMultimidia</td>
+                    <td>@emprestimo.DataReserva</td>
+                    <td>@emprestimo.DataDevolucao</td>
+                </tr>
+            }
+        }
+       
+    </tbody>
+</table>
+</div>

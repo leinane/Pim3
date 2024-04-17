@@ -1,0 +1,58 @@
+﻿@model EmprestimosModel 
+@{
+
+    ViewData["title"] = "Cadastrar Empréstimo";
+}
+
+<div class="container bg-dark p-5 rounded-5">
+
+    <div class="ab-5 text-center">
+        <h1 class="text-light">Cadastro de Empréstimo</h1>
+    </div>
+<form method="post" asp-controller="Emprestimo" asp-action="Cadastrar" >
+
+   
+
+        <legend>Disabled fieldset example</legend>
+        <div class="mb-3">
+            <label for="Name" class="form-label  text-light" >Nome</label>
+            <input type="text" asp-for="Name" id="Name" class="form-control" placeholder="Nome do professor que solicita o emprestimo">
+        </div>
+            <div class="mb-3">
+                <label for="Sala" class="form-label text-light">Sala</label>
+            <input type="text" asp-for="Sala" id="Sala" class="form-control" placeholder="Sala que seá utilizado o aparelho">
+            </div>
+
+            <div class="mb-3">
+                <label for="DataReserva" class="form-label text-light">Data da Reserva</label>
+            <input type="text" asp-for="DataReserva" id="DataReserva" class="form-control" placeholder="Data da Reserva">
+            </div>
+
+        <div class="mb-3">
+                <label for="EquipamentoMultimidia" class="form-label text-light">Equipamento Multimídia</label>
+            <select asp-for="EquipamentoMultimidia" id="EquipamentoMultimidia" class="form-select">
+                    <option>notebooks</option>
+                    <option>TV com DVD</option>
+                    <option>TV com VCR</option>
+                    <option>datashows</option>
+                    <option>projetor de slides</option>
+                    <option>sistemas de áudio-microfone</option>
+                    <option>caixa amplificada</option>
+            </select>
+            </div>
+           
+            <div class="mb-3">
+                <label for="DataDevolucao" class="form-label text-light">Data da Devolução</label>
+            <input type="text" asp-for="DataDevolucao" id="DataDevolucao" class="form-control" placeholder="Qual a data da devolução">
+            </div>
+
+         <div class="d-flex gap-5 mt-5">
+
+                <button type="submit" class="btn btn-success w-50">Adicionar</button>
+                <a class ="btn btn-success w-50" asp-asp-controller="Emprestimo" asp-action="Index">Voltar</></a>
+         </div>
+
+       
+
+    </form>
+</div>
